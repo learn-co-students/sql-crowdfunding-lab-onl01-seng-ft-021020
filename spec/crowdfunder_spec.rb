@@ -13,7 +13,7 @@ describe "crowdfunder sql" do
 
     it "creates a projects table with an id as a primary key" do
       expect(@db.execute("PRAGMA table_info(projects);").detect { |arr| arr[-1] == 1 && arr[2] == "INTEGER" }.length).to eq(6)
-    end
+    end 
 
     it "creates a projects table with a title field" do
       expect{@db.execute("SELECT title FROM projects;")}.to_not raise_exception
